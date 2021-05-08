@@ -1,9 +1,10 @@
+//required routes
 const apirRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 
 const express = require('express');
 
-const {notes} = require('./db/db.json');
+const {notes} = require('./Develop/db/db.json');
 
 //choosing server and port
 
