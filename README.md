@@ -5,10 +5,13 @@
 # Install guide 
 go to github, clone the repo 
 open in vs code 
+you must npm init
+you must npm install express \
+you must install jets if you want to test 
 
 # deployed site 
 
-[deployed site](---placeholder---)
+[deployed site](https://buckxx1.github.io/note_taker_v1/)
 
 
 
