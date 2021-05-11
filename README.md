@@ -11,7 +11,7 @@ you must install jets if you want to test
 
 # deployed site 
 
-[deployed site](https://note-taker-v1-master.herokuapp.com/)
+[deployed site](note-taker-v1-master.herokuapp.com/)
 
 
 
