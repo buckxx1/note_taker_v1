@@ -1,35 +1,53 @@
 //requirements
+const uniqid = require("uniqid");
 const fs = require("fs");
 const path =require("path");
 
-//grab note by id 
-function findById(id, notesArray) {
-    const result = notesArray.filter(note => note.id === id) [0];
-    return result;
-};
+function removeNote(id) {
 
-//make new note then validate
-function createNewNote (body, notesArray) {
-    const note = body;
-    notesArray.push(note);
-    fs.writeFileSync(
-        path.join(__dirname, '../Develop/db/db.json'),
-        JSON.stringify({notes: notesArray}, null, 2)
-    )
-}
-function validateNote(note) {
+    const notesArray = JSON.parse(fs.readFileSync(path.join(__dirname, '../Develop/db/db.json'),'utf8'));
+  
+    const newNotesArray = notesArray.filter(newNotes => newNotes.id != id);
+  
+     fs.writeFileSync(
+      path.join(__dirname, '../Develop/db/db.json') ,
+      JSON.stringify( newNotesArray , null, 2));
+  }
+  
+  function createNewNote(body) {
+      const note = body;
+      const notesArray = JSON.parse(fs.readFileSync(path.join(__dirname, '../Develop/db/db.json'),'utf8'));
+  
+      note.id = uniqid();
+  
+      notesArray.push(note);
+      
+      fs.writeFileSync(
+          path.join(__dirname, '../Develop/db/db.json') ,
+          JSON.stringify(notesArray, null, 2));
+  
+      return note;
+    }
+  
+  function showNotes(notesArray) {
+    
+    const note = fs.readFileSync(path.join(__dirname, '../Develop/db/db.json'),'utf8');
+    return JSON.parse(note);
+  }
+  
+  function validateNote(note) {
+    if (!note.text || typeof note.text !== 'string') {
+      return false;
+    }
     if (!note.title || typeof note.title !== 'string') {
-        return false;
+      return false;
     }
-    if (!note.text || note.text !== 'string') {
-        return false;
-    }
-    if (!note.id || typeof note.id !== 'string') {
-        return false;
-    }
-}
-module.exports = {
-    findById,
-    createNewNote,
-    validateNote,
-}
+    return true;
+  }
+  
+    module.exports = {
+      createNewNote,
+      validateNote,
+      showNotes,
+      removeNote
+    };

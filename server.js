@@ -1,24 +1,16 @@
-//required routes
-const apirRoutes = require('./routes/apiRoutes');
-const htmlRoutes = require('./routes/htmlRoutes');
-
 const express = require('express');
+const PORT = process.env.PORT || 3007; 
+const app = express(); // starts server
+const routes = require('./routes/noteRoutes');
 
-const {notes} = require('./Develop/db/db.json');
+app.use(express.urlencoded({ extended: true }));// parse data
 
-//choosing server and port
+app.use(express.json());// parse incoming JSON data
+app.use(express.static('Develop/public')); 
 
-const PORT = process.env.PORT || 4001;
-const app = express();
-
-app.use(express.urlencoded({extended: true }));
-app.use(express.json());
-
-app.use('/api', apirRoutes);
-app.use('/',htmlRoutes);
-
-app.use(express.static('public'));
+app.use('/', routes);
 
 app.listen(PORT, () => {
-    console.log(`API server is running on port ${PORT}`)
-});
+    console.log(`API server now on port ${PORT}!`);
+  });
+  

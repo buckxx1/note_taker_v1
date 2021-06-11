@@ -17,12 +17,12 @@ const show = (elem) => {
   elem.style.display = 'inline';
 };
 
-// Hide an element
+// Hide 
 const hide = (elem) => {
   elem.style.display = 'none';
 };
 
-// activeNote is used to keep track of the note in the textarea
+//current active note 
 let activeNote = {};
 
 const getNotes = () =>
@@ -67,7 +67,7 @@ const renderActiveNote = () => {
 };
 
 const handleNoteSave = () => {
-  console.log("test test test")// remeber to remove this lateer 
+   
   const newNote = {
     title: noteTitle.value,
     text: noteText.value,
@@ -78,7 +78,7 @@ const handleNoteSave = () => {
   });
 };
 
-// Delete the clicked note
+// delete button 
 const handleNoteDelete = (e) => {
   // prevents the click listener for the list from being called when the button inside of it is clicked
   e.stopPropagation();
