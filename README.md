@@ -6,12 +6,21 @@
 go to github, clone the repo 
 open in vs code 
 you must npm init
-you must npm install express \
-you must install jets if you want to test 
+you must npm install 
+npm start 
+then go to localhost:3007 in your browser to use
 
-# deployed site 
+# repo
+https://github.com/buckxx1/note_taker_v1/
 
-[deployed site](note-taker-v1-master.herokuapp.com/)
+# screenshots
+![Screen Shot 2021-06-11 at 2 46 35 PM (2)](https://user-images.githubusercontent.com/67339036/121737103-71696500-cac6-11eb-99d4-97b21cd1d927.png)
+![Screen Shot 2021-06-11 at 2 44 40 PM (2)](https://user-images.githubusercontent.com/67339036/121737171-86de8f00-cac6-11eb-9d16-5cff7a07b4f7.png)
+![Screen Shot 2021-06-11 at 2 18 22 PM (2)](https://user-images.githubusercontent.com/67339036/121737201-8fcf6080-cac6-11eb-9fa7-6dab84120406.png)
+![Screen Shot 2021-06-11 at 2 18 36 PM (2)](https://user-images.githubusercontent.com/67339036/121737226-98c03200-cac6-11eb-80ea-b2b0dfe3d4e9.png)
+
+
+
 
 
 
